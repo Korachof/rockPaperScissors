@@ -2,7 +2,6 @@
 class Player:
     def __init__(self, player_name):
         self._player_name = player_name
-        gameOptionsHash = {"Rock": "Scissors", "Scissors": "Paper", "Paper": "Rock"}
 
     def get_player_name(self):
         """
@@ -10,8 +9,10 @@ class Player:
         :param None
         :return: self._player_name
         """
-
         return self._player_name
+
+    def get_game_options(self):
+        return {"ROCK": "SCISSORS", "SCISSORS": "PAPER", "PAPER": "ROCK"}
 
     def player_move(self, rps_choice):
         """
@@ -36,16 +37,16 @@ class Player:
         :param computer_choice: String
         :return: Binary: String (win/lose)
         """
-        print("Your weapon of choice was " + player_choice)
-        print("My weapon of choice was" + computer_choice)
+        print("Your weapon of choice was " + player_choice.upper())
+        print("My weapon of choice was " + computer_choice)
 
         # player wins
-        if self.gameOptionsHash[player_choice] == computer_choice:
+        if self.get_game_options()[player_choice] == computer_choice:
             print("Wow! You beat me! You win!")
             return "Player Win"
 
         # computer wins
-        elif self.gameOptionsHash[computer_choice] == player_choice:
+        elif self.get_game_options()[computer_choice] == player_choice:
             print("Just as expected. Thanks for trying, but I'm just that good.")
             return "Computer Win"
 
