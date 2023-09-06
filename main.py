@@ -1,4 +1,5 @@
 import rps
+from random import randint
 
 def main():
     opening = "Hello. Welcome to Rock, Paper, Scissors, FIGHT. My name is Frank. I do not mean to scare you, but" \
@@ -10,19 +11,16 @@ def main():
     if opening.upper() == "YES":
         user_name = input("Fantastic! I'm not going to go easy on you, though. First, what is your name? \n")
 
-        rps.Player(user_name)
+        user = rps.Player(user_name)
 
-        "Nice to meet you, " + rps.Player.get_player_name()
+        "Nice to meet you, " + user.get_player_name()
 
         "Now that we are done with pleasantries, time to attack me! What is your weapon of choice?"
 
         user_move = input("Please type ROCK if you would like to wield rock, PAPER if you would like to wield paper, " \
                           "or SCISSORS if you would like to wield scissors")
 
-
-
-
-        if user_move.upper() != "ROCK" or user_move.upper() != "PAPER" or user_move.upper() != "SCISSORS":
+        franks_move = user.gameOptionsHash[randint(0, 2)]
 
 
 
