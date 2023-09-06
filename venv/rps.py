@@ -56,6 +56,13 @@ class Player:
         return "Tie"
 
     def results_data(self, user, result):
+        """
+        Takes in the user's name and the result of the rps match and appends the result to a
+            text file
+        :param user: String (user name)
+        :param result: String (Player Win, Computer Win, or Tie)
+        :return: None
+        """
         today = date.today()
         with open(user + "_" + "rps_results.txt", "a") as f:
             f.write(str(today.month) + "/" + str(today.day) + "/" + str(today.year) + ": " + result + "\n")
