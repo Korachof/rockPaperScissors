@@ -20,7 +20,6 @@ class Player:
         """
         return {"ROCK": "SCISSORS", "SCISSORS": "PAPER", "PAPER": "ROCK"}
 
-
     def battle_time(self, player_choice, computer_choice):
         """
         Takes in player_choice and computer_choice and compares them to find a winner
