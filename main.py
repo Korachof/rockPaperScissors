@@ -23,6 +23,10 @@ def main():
             user_move = input("Please type ROCK if you would like to wield rock, PAPER if you would like to wield "
                               "paper, or SCISSORS if you would like to wield scissors \n")
 
+            while user_move.upper() != "ROCK" and user_move.upper() != "PAPER" and user_move.upper() != "SCISSORS":
+                user_move = input("Please type ROCK if you would like to wield rock, PAPER if you would like to wield "
+                                  "paper, or SCISSORS if you would like to wield scissors \n")
+
             franks_move = random.choice(["ROCK", "PAPER", "SCISSORS"])
 
             user.results_data(user_name.lower(), user.battle_time(user_move.upper(), franks_move))
