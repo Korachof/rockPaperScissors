@@ -1,3 +1,4 @@
+from datetime import date
 
 class Player:
     def __init__(self, player_name):
@@ -53,6 +54,11 @@ class Player:
         # game is tied
         print("Ah. I see I have a worthy opponent. Looks like we have a stalemate on our hands.")
         return "Tie"
+
+    def results_data(self, user, result):
+        today = date.today()
+        with open(user + "_" + "rps_results.txt", "a") as f:
+            f.write(str(today.month) + "/" + str(today.day) + "/" + str(today.year) + ": " + result + "\n")
 
 
 
