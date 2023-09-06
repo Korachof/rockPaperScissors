@@ -5,11 +5,20 @@ class Player:
         self._player_name = player_name
         gameOptionsHash = {"Rock": "Scissors", "Scissors": "Paper", "Paper": "Rock"}
 
-
     def get_player_name(self):
+        """
+        Get name for user
+        :param None
+        :return: self._player_name
+        """
         return self._player_name
 
     def player_move(self, rps_choice):
+        """
+        Takes in the legal player move
+        :param rps_choice: string
+        :return: rps_choice
+        """
         if rps_choice in gameOptionsHash.keys():
             return rps_choice
 
@@ -20,10 +29,5 @@ class Player:
         self.player_move(ask_again)
 
 
-
-
-
-
-# hashmap for player options and their corresponding
 
 
