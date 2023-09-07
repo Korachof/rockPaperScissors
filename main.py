@@ -36,15 +36,16 @@ def main():
 
         play_time = make_moves()
 
-        while play_time.upper() != "NO" and play_time.upper() != "YES":
-            input("Would you like to try again? Type YES if you would like to continue."
-                  " Type NO if not. \n")
+        while True:
+            if play_time.upper() != "NO" and play_time.upper() != "YES":
+                play_time = input("Would you like to try again? Type YES if you would like to continue."
+                                  " Type NO if not. \n")
 
-        if play_time.upper() == "NO":
-            exit()
+            if play_time.upper() == "NO":
+                return False
 
-        while play_time.upper() == "YES":
-            play_time = make_moves()
+            if play_time.upper() == "YES":
+                play_time = make_moves()
 
 
 main()
